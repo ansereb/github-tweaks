@@ -1,6 +1,8 @@
 # GitHub Contributors
 
-This script aims to calculate unique contributors of GitHub organization. Also It shows contributors who commited only to 1 repository. This can be helpful when your organization is about to purchase SaaS with licence model based on number of contributors.
+This script aims to calculate unique contributors of GitHub organization by working with GitHub API. Also It shows contributors who commited only to 1 repository. This can be helpful when your organization is about to purchase SaaS with licence model based on number of contributors.
+
+Last but not least the script tries to exclude contributors from previous version control services. They can appear after migration from Gitlab to GitHub or from GitHub On-Premise to GitHub Cloud.
 
 ## Usage
 

@@ -56,8 +56,11 @@ if __name__ == "__main__":
     while result['payload']['hasMoreSuites'] == True:
         page_number += 1
         params['page']=page_number
-        result = requests.get(url, params=params, cookies=cookies).json()
-        rule_suite_runs.extend(result['payload']['ruleSuiteRuns'])
+        try:
+            result = requests.get(url, params=params, cookies=cookies).json()
+            rule_suite_runs.extend(result['payload']['ruleSuiteRuns'])
+        except requests.JSONDecodeError:
+            break
     print('Received a total of '+str(len(rule_suite_runs))+ ' rule suite runs.')
     print('Calculating statistic for rule "'+args['ruleset']+'" runs...')
     stats = []
